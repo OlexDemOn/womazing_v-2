@@ -1,0 +1,118 @@
+@import './mixin.scss';
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Raleway';
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+html,
+body {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: $bg;
+    overflow-x: hidden;
+    >*{
+        height: 100%;
+    }
+
+}
+button {
+    box-sizing: content-box;
+    cursor: pointer;
+    background: none;
+    border: 0;
+    color: inherit;
+    font: inherit;
+    line-height: normal;
+    overflow: visible;
+    padding: 0;
+    -webkit-appearance: button; /* for input */
+    -webkit-user-select: none; /* for button */
+       -moz-user-select: none;
+        -ms-user-select: none;
+}
+a {
+  text-decoration: none;
+  color: black;
+}
+
+ul, li{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+input {
+  all: unset;
+}
+
+.container {
+    width: 100%;
+    max-width: 1140px;
+    padding: 0 20px;
+    height: 100%;
+    margin: 0 auto;
+} 
+.main-block{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+}
+.big_title{
+    font-weight: 500;
+    @include adaptiv("font-size", 50, 20);
+    line-height: 110%;
+    letter-spacing: 0.02em;
+}
+
+.title{
+    font-weight: 500;
+    font-size: 25px;
+}
+.green_button{
+    box-sizing: border-box;
+    padding: 22px 50px;
+    background: $primary;
+    color: white;
+    transition: 0.3s ease-in-out;
+    &:hover{
+        background: #509498;
+    }
+}
+.button_border{
+    padding: 22px 50px;
+    border: 1px solid $primary;
+    color: $primary;
+    transition: 0.3s ease-in-out;
+    &:hover{
+        color: #FFFFFF;
+        background: $primary;
+    }
+}
+.link_active{
+    color: $primary;
+}
+.input_field{
+        position: relative;
+        width: 100%;
+        span{
+            position: absolute;
+            left: 0;
+            top: 10px;
+            transition: 0.3s ease-in-out;
+        }
+        input{
+            position: relative;
+            border-bottom: 1px solid black;
+            width: 100%;
+            height: 40px;
+            &:valid ~ span,
+            &:focus ~ span{
+                top: -15px;
+            }
+        }
+    }

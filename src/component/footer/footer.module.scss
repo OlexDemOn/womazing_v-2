@@ -1,0 +1,93 @@
+@import '../../styles/mixin.scss';
+
+.footer{
+    width: 100%;
+    background: $bg_second;
+    &>*{
+        display: flex;
+        align-items: center;
+        min-height: 360px;
+    }
+}
+
+.main{
+    display: flex;
+    justify-content: space-between;
+    height: 100%;
+    padding: 20px 0;
+    width: 100%;
+    @media screen and (max-width: 576px) {
+        flex-direction: column;
+            align-items: center;
+        &>*{
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            width: 280px;
+        }
+        gap: 30px;
+    }
+}
+
+.left_part{
+    min-width: 200px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    .logo{
+        display: flex;
+        align-items: center;
+        span{
+            padding-left: 15px;
+            text-transform: uppercase;
+            font-weight: 500;
+        }
+    }
+    .privacy{
+        display: flex;
+        flex-direction: column;
+        row-gap: 5px;
+    }
+}
+
+.contacts{
+    display: flex;
+    flex-direction: column;
+    row-gap: 30px;
+    align-items: flex-end;
+    @media screen and (max-width: 576px) {
+        align-items: center;
+    }
+    .call_back{
+        min-width: 160px;
+        display: flex;
+        align-items: flex-end;
+        flex-direction: column;
+        row-gap: 10px;
+        @media screen and (max-width: 576px) {
+            align-items: center;
+        }
+    }
+    .social_network{
+        display: flex;
+        gap: 10px;
+    }
+}
+
+.menu{
+    .menu_list{
+        display: flex;
+        >*:not(:last-child){
+            @include adaptiv("padding-right", 45, 20);
+        }
+        @media screen and (max-width: 768px) {
+            flex-direction: column;
+            gap: 15px;
+            width: 100%;
+            align-items: center;
+            >*:not(:last-child){
+                padding-right: 0;
+            }
+        }
+    }
+}

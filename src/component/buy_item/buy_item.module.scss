@@ -1,0 +1,158 @@
+@import '../../styles/mixin.scss';
+
+.main{
+    margin-top: 120px;
+    @include adaptiv('padding-top', 150, 30);
+    min-height: calc(100vh - 120px) ;
+}
+
+.title{
+    margin-top: 25px;
+    :last-child{
+        color: #909090;
+    }
+}
+
+.item_info{
+    min-height: 730px;
+    display: flex;
+    justify-content: space-between;
+    @include adaptiv("margin-top", 100, 60);
+    @include adaptiv("margin-bottom", 130, 60);
+    @media screen and (max-width: 576px) {
+        flex-direction: column;
+    }
+    .img_block{
+        @include adaptiv("max-height", 730, 600);
+        max-width: 535px;
+        @media screen and (max-width: 576px) {
+            @include adaptiv("height", 800, 400);
+        }
+        img{
+
+            object-fit: contain;
+            width: 100%;
+            height: 100%;
+        }
+    }
+    .item_porperties{
+        width: 60%;
+        @media screen and (max-width: 576px) {
+            width: 100%;
+        }
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 60px;
+        
+        @include adaptiv("padding", 70, 15);
+        .item_price{
+            color: #9C9C9C;
+            font-size: 40px;
+        }
+        .item_radio_block{
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+        .item_buttons{
+            display: flex;
+            gap: 15px;
+            width: auto;
+            height: 40px;
+            input{
+                cursor: pointer;
+                position: absolute;
+                opacity: 0;
+                // background: grey;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+            }
+            label{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+                height: 100%;
+                transition: 0.3s ease-in-out;
+            }
+            .item_size_button{
+                position: relative;
+                border: 1px solid #000;
+                width: 40px;
+                height: 40px;
+                color: #000;
+                input:checked + label{
+                    background: #000;
+                    color: #FFF;
+                }
+            }
+            .item_color_button{
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                position: relative;
+                label{
+                    &[data-color="#927876"] {
+                        background: #927876;
+                    }
+                    &[data-color="#D4D4D4"] {
+                        background: #D4D4D4;
+                    }
+                    &[data-color="#FD9696"] {
+                        background: #FD9696;
+                    }
+                    &[data-color="#FDC796"] {
+                        background: #FDC796;
+                    }
+                    border-radius: 50%;
+                }
+                input:checked + label{
+                    border: 1px solid #000;
+                }
+            }
+        }
+        .submit_buttons{
+            display: flex;
+            gap: 15px;
+            max-height: 70px;
+            input[type=number]::-webkit-inner-spin-button, 
+            input[type=number]::-webkit-outer-spin-button { 
+                -webkit-appearance: none;
+            }
+            input{
+                display: flex;
+                text-align: center;
+                max-width: 68px;
+                min-width: 68px;
+                height: 68px;
+                box-sizing: border-box;
+                border: 1px solid black;
+            }
+            button{
+                height: 100%;
+            }
+            .item_count{
+                position: relative;
+                display: flex;
+                justify-content: center;
+                align-content: center;
+                button{
+                    position: absolute;
+                    width: 100%;
+                    height: 10px;
+                    &:first-child{
+                        top: 0;
+                    }
+                    &:last-child{
+                        bottom: 10px;
+                    }
+                }
+            }
+        }
+    }
+
+}

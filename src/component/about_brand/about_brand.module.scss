@@ -1,0 +1,44 @@
+@import '../../styles/mixin.scss';
+
+.main{
+    @include adaptiv("margin-top", 280, 120);
+}
+
+.title{
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    @include adaptiv("margin-bottom", 200, 30);
+    .last_link{
+        color: #909090;
+    }
+}
+
+.content_block{
+    display: flex;
+    justify-content: space-between;
+    @include adaptiv("gap", 100, 30);
+    width: 100%;
+    min-height: 540px;
+    @include adaptiv("margin-bottom", 130, 60);
+    @media screen and (max-width: 576px) {
+        flex-direction: column;
+    }
+    .content_img{
+        max-width: 440px;
+        min-height: 540px;
+        min-width: 200px;
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+    .content_text{
+        max-width: 540px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 45px;
+    }
+}

@@ -1,0 +1,26 @@
+@import '../../styles/mixin.scss';
+
+.main{
+    width: 100%;
+    min-height: 400px;
+    margin-top: 130px;
+    @include adaptiv("margin-top", 130, 60);
+}
+
+.cart_container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    @include adaptiv("margin-top", 90, 30);
+    gap: 30px;
+    @media screen and (max-width: "768px") {
+        flex-direction: column;
+    }
+    h2{
+        margin: 35px 0 25px 0;
+    }
+    .cart_text{
+        font-weight: 500;
+        font-size: 17px;
+    }
+}

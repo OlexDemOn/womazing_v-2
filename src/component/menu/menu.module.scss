@@ -1,0 +1,56 @@
+@import '../../styles/mixin.scss';
+
+.menu{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    font-size: 15px;
+    .menu_list{
+        >*:not(:last-child){
+        @include adaptiv("padding-right", 45, 20);
+    }
+    }
+
+    @media screen and (max-width: 768px) {
+        position: absolute;
+        height: 100%;
+        .menu_list{
+            pointer-events: none;
+            position: absolute;
+            display: flex;
+            flex-direction: column;
+            right: -100%;
+            top: 0;
+            padding: 15px;
+            font-size: 20px;
+            padding-top: 50px;
+            gap: 20px;
+            width: 250px;
+            background: $bg_second;
+            height: 100vh;
+            transition: 0.3s ease-in-out;
+        }
+        .menu_open {
+            right: 0;
+        }
+        .menu_list_open{
+            right: 0;
+            pointer-events: all;
+        }
+        .hamburger{
+            position: absolute;
+            top: 35%;
+            right: 45px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            height: 30px;
+            span{
+                width: 40px;
+                height: 3px;
+                border-radius: 3px;
+                background: #000;
+            }
+        }
+    }
+}

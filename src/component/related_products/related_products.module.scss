@@ -1,0 +1,13 @@
+@import '../../styles/mixin.scss';
+
+
+
+.item_block{
+    display: flex;
+    justify-content: space-between;
+    @media screen and (max-width: 576px) {
+        flex-direction: column;
+    }
+    @include adaptiv("margin-top", 65, 30);
+    @include adaptiv("margin-bottom", 130, 60);
+}

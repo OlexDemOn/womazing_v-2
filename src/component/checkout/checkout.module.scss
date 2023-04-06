@@ -1,0 +1,15 @@
+@import '../../styles/mixin.scss';
+
+.main{
+    @include adaptiv("margin-top", 280, 120);
+}
+
+.title{
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    @include adaptiv("margin-bottom", 200, 30);
+    .last_link{
+        color: #909090;
+    }
+}
